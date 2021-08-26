@@ -22,7 +22,8 @@
 [showcase 1]: https://loia5tqd001.github.io/Web-Learning-Journey/frontend/html_css_full_page/figma_implementation_deved/
 [source code 1]: https://github.com/loia5tqd001/Web-Learning-Journey/tree/master/frontend/html_css_full_page/figma_implementation_deved
 [figma design 1]: https://www.figma.com/file/ncL4Tciptu5IigRjbfFCOh/DevEd-Website?node-id=0%3A1
-[figma design 3:] https://www.figma.com/file/ncL4Tciptu5IigRjbfFCOh/DevEd-Website?node-id=14%3A2
+[Mobifone.pdf](https://github.com/duongquang18it3/100-day-journey-to-learn-basic-Web/files/7055561/Mobifone.pdf)
+
 
 [showcase 2]: https://loia5tqd001.github.io/Web-Learning-Journey/frontend/html_css_full_page/gary_simon_2020_crash_course/
 [source code 2]: https://github.com/loia5tqd001/Web-Learning-Journey/tree/master/frontend/html_css_full_page/gary_simon_2020_crash_course
