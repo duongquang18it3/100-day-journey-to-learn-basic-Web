@@ -1,1 +1,96 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+:root{
+    --main: #fd3c4d;
+    --bg: #e2f6ff;
+    --bg1: #515152;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+ line-height: 1.5;
+}
+ul{
+    list-style: none;
+}
+.pricing{
+    width: 100%;
+    background: var(--bg);
+    padding: 100px 50px;
+    min-height: 100vh;
+}
+.table{
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.price{
+    background: var(--bg1);
+    flex: 0 1 350px;
+    padding: 30px 0;
+    border-radius: 10px;
+}
+.pricing h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+} 
+.pricing span{
+    color: var(--main);
+}
+.price h4{
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 0;
+}
+.price .head{
+    background: var(--main);
+    margin-bottom: 20px;
+    padding: 5px auto;
+    text-align: center;
+    color: #fff;
+}
+.price .line{
+    background: var(--main);
+    text-align: center;
+    width: 80%;
+    height: 1px;
+    margin: 20px auto;
+}
+.price .feature{
+    margin: 0 auto;
+    color: #fff;
+    width: 80%;
+}
+.price i{
+   color: var(--main);
+   letter-spacing: 10px; 
+}
+.price ul li{
+    margin: 10px auto;
+}
+.price .input{
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;   
+}
+.btn{
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #fd3c4d;
+    width: 80%;
+    text-align: center;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 20px;
+    color: #fff;
+}
