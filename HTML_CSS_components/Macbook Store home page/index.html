@@ -9,6 +9,9 @@
     <title>TDQ Macbook Store</title>
 </head>
 <body>
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
     <div class="container">
         <!-- ----Nav--- -->
         <nav class="main-nav">
@@ -155,15 +158,18 @@
         </section>
         <section class="follow">
             <p>Follow Macbook Store of Tran Duong Quang</p>
-            <a href="facebook.com">
-                <img src="./img/social-fb.png" alt="">
-            </a>
-            <a href="facebook.com">
-                <img src="./img/social-twitter.png" alt="">
-            </a>
-            <a href="facebook.com">
-                <img src="./img/social-linked.png" alt="">
-            </a>
+            <div class="icon">
+                <a href="facebook.com">
+                    <img src="./img/social-fb.png" alt="">
+                </a>
+                <a href="facebook.com">
+                    <img src="./img/social-twitter.png" alt="">
+                </a>
+                <a href="facebook.com">
+                    <img src="./img/social-linked.png" alt="">
+                </a>
+            </div>
+            
         </section>
     </div> 
     <!-- Linkn -->
@@ -237,5 +243,9 @@
             </ul>
         </div>
     </footer>
+    <script>
+        document.querySelector('.menu-btn').addEventListener
+        ('click', () => document.querySelector('.main-menu').classList.toggle('show'))
+    </script>
 </body>
 </html>
