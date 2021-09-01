@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    text-decoration: none
+}
+body{
+    background: white;
+    color:#000;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.main-nav img{
+    width: 3rem;
+    overflow: hidden;
+    object-fit: fill;
+    margin-left: 30px;
+}
+a{
+   color: #262626; 
+}
+ul{
+    list-style: none;
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+/* nav */
+.main-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 20px 0;
+    font-size: 16px;
+    margin: 10px auto;
+}
+.main-nav ul{
+    display: flex; 
+}
+.main-nav ul li {
+    padding: 0 10px;
+}
+.main-nav ul li a:hover{
+    border-bottom: 2px solid #262626;
+}
+.main-nav ul.main-menu{
+    flex: 1;
+    margin-left: 20px;
+    justify-content: center;
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #262626;
+    color: #fff;
+    font-size: 15px;
+}
+.btn:hover{
+    opacity: 0.9;
+}
+
+/* showcase */
+.showcase{
+    width: 100%;
+    height: 380px;
+    background: url('./img/showcase.png') no-repeat center 
+    center/cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+/* ----------- Home Card --------- */
+.home-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    align-self: normal;
+    margin-bottom: 40px;
+
+}
+.home-cards img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.home-cards h3{
+    margin-bottom: 5px;
+}
+.card-item {
+ display: flex;
+ flex-direction: column;
+ align-self: normal;
+ 
+}
+.card-item a {
+    display: inline-block;
+    padding-top: 10px;
+    color: #0567d6 ;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex-end;
+    margin-top: auto;
+    
+}
+
+/* macbook-m1 */
+.macbook-m1{
+    width: 100%;
+    height: 350px;
+    background: url('./img/appletv.png')
+    no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.macbook-m1 .content{
+    width: 30%;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+/* Carbon */
+.carbon{
+    width: 100%;
+    height: 350px;
+    background: url('./img/carbon.png')
+    no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.carbon .content{
+    width: 30%;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.carbon .content {
+    color: #fff;
+}
+/* Follow */
+.follow{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.follow img{
+    width: 30px;
+    height: 30px;
+    object-fit: fill;
+}
+/* follow */
+.links {
+    background: #f2f2f2;
+    color: #616161;
+    font-size: 12px;
+    padding: 35px 0; 
+}
+.links-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.link li{
+    line-height: 2.8;
+
+}
+/* Footer */
+.footer {
+    background: #f2f2f2;
+    color: #616161;
+    font-size: 12px;
+    padding: 20px 0;
+}
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+.footer div{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer li{
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
