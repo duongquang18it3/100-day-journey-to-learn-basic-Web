@@ -1,1 +1,29 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat';
+  margin: 0;
+}
+
+body #bg {
+  -webkit-clip-path: polygon(100% 0, 100% 87%, 40% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 87%, 40% 100%, 0 100%, 0 0);
+  background-color: #005dff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+body header a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  -webkit-text-decoration: uppercase;
+          text-decoration: uppercase;
+}
+/*# sourceMappingURL=main.css.map */
