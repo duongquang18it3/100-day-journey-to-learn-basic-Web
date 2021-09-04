@@ -18,12 +18,29 @@ body #bg {
   z-index: -1;
 }
 
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 75% 0%, 55% 100%, 0% 100%);
+            clip-path: polygon(0 0, 75% 0%, 55% 100%, 0% 100%);
+  }
+}
+
 body header a {
   color: #fff;
   text-decoration: none;
   padding: 15px;
   display: block;
   text-transform: uppercase;
+}
+
+@media (min-width: 840px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "primary card";
+  }
 }
 
 main section#card {
@@ -34,6 +51,18 @@ main section#card {
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 80%;
+}
+
+@media (min-width: 840px) {
+  main section#card {
+    grid-area: card;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 main section#card ul {
@@ -66,6 +95,14 @@ main section#primary {
   text-align: center;
 }
 
+@media (min-width: 840px) {
+  main section#primary {
+    grid-area: primary;
+    text-align: left;
+    margin: 4em 0 0 4em;
+  }
+}
+
 main section#primary h1 {
   font-size: 3rem;
   margin-top: 10px;
@@ -73,19 +110,35 @@ main section#primary h1 {
           text-decoration: upppercase;
 }
 
+@media (min-width: 840px) {
+  main section#primary h1 {
+    width: 30%;
+    font-size: 4em;
+    line-height: 1em;
+  }
+}
+
 main section#primary p {
   font-size: 1.4rem;
 }
 
 main section#primary a {
+  /* width: fit-content; */
   border-radius: 15px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: #FFF6BB;
+  background-color: #f8df00;
   display: block;
   text-align: center;
   margin: 50px auto 0 auto;
   padding: 15px;
+}
+
+@media (min-width: 840px) {
+  main section#primary a {
+    display: inline-block;
+    padding: 15px 60px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
