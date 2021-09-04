@@ -4,7 +4,7 @@ $colors: (
     primary: #005dff,
     primary-light: lighten(#005DFF, 40%),
     primary-dask: darken(#005dff, 40%),
-    accent: #FFF6BB
+    accent: #f8df00
 );
 
 $padding: 15px;
@@ -14,6 +14,12 @@ $border: 15px;
     @return map-get($colors, $color-name)
 }
 
+$desktop: 840px;
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
 
 body, html {
     height: 100%;
@@ -28,6 +34,10 @@ body {
         height: 100%;
         position: absolute;
         z-index: -1;
+
+        @include desktop{
+            clip-path: polygon(0 0, 75% 0%, 55% 100%, 0% 100%);
+        }
     }
      header a {
          color:#fff ;
@@ -38,6 +48,14 @@ body {
    }
  }
 main {
+
+    @include desktop{
+        display:grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas: 
+        "primary card";
+    }
+
     section#card{
         background: #fff;
         padding: 20px;
@@ -45,7 +63,11 @@ main {
         border-radius: $border;
         box-shadow: 0 10px 30px rgba(0,0,0,.2) ;
         width: 80%;
-
+        @include desktop{
+            grid-area: card;
+            height: fit-content;
+            align-self: center;
+        }
         ul{
             list-style-type: none;
             margin: 0;
@@ -75,16 +97,26 @@ main {
         color: #fff;
         padding: $padding;
         text-align: center;
-
+        @include desktop{
+            grid-area: primary;
+            text-align: left;
+            margin: 4em 0 0 4em;
+        }
         h1{
             font-size: 3rem;
             margin-top: 10px;
             text-decoration: upppercase;
+            @include desktop{
+                width: 30%;
+                font-size: 4em;
+                line-height: 1em;
+            }
         }
         p{
              font-size: 1.4rem;
         }
         a{
+            /* width: fit-content; */
             color: color(primary-dark);
             border-radius: $border;
             text-decoration: none;
@@ -95,6 +127,10 @@ main {
             text-align: center;
             margin: 50px auto 0 auto;
             padding: $padding;
+            @include desktop{
+                display: inline-block;
+                padding: $padding $padding * 4;
+            }
         }
 
     }
