@@ -2,10 +2,13 @@
 
 $colors: (
     primary: #005dff,
+    primary-light: lighten(#005DFF, 40%),
+    primary-dask: darken(#005dff, 40%),
     accent: #FFF6BB
 );
 
 $padding: 15px;
+$border: 15px;
 
 @function color($color-name){
     @return map-get($colors, $color-name)
@@ -31,7 +34,69 @@ body {
          text-decoration: none;
          padding: $padding;
          display: block;
-         text-decoration: uppercase;
+         text-transform: uppercase;
    }
  }
- 
+main {
+    section#card{
+        background: #fff;
+        padding: 20px;
+        margin: 1rem auto;
+        border-radius: $border;
+        box-shadow: 0 10px 30px rgba(0,0,0,.2) ;
+        width: 80%;
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin-bottom: 10px;
+
+                span {
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    background-color: color(primary-light);
+                    border-radius: 50%;
+                }
+
+                strong {
+                    display: inline-block;
+                    margin-left: max(40px);
+                    margin-top: 10px;
+                }
+            }
+        }
+        
+    }
+    section#primary{
+        color: #fff;
+        padding: $padding;
+        text-align: center;
+
+        h1{
+            font-size: 3rem;
+            margin-top: 10px;
+            text-decoration: upppercase;
+        }
+        p{
+             font-size: 1.4rem;
+        }
+        a{
+            color: color(primary-dark);
+            border-radius: $border;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: color(accent);
+            display: block;
+            text-align: center;
+            margin: 50px auto 0 auto;
+            padding: $padding;
+        }
+
+    }
+
+}
