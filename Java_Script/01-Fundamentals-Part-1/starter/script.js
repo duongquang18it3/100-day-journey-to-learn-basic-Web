@@ -56,7 +56,7 @@ console.log(typeof null);
 ///////////////////// 7. Let, const, and var /////////////////////
 
 // Declare let
-let age = 20;
+/* let age = 20;
 age = 21;
 console.log(age);
 
@@ -71,4 +71,7 @@ console.log(job);
 
 // Not recommended
 firstName = 'TDQ';
-console.log(firstName);
+console.log(firstName); */
+
+//////////////// 8.Basic operator ///////////
+
