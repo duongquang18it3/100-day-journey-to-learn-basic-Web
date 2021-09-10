@@ -31,6 +31,7 @@ console.log(myFirstJob); */
 ////////////////////////////////////////
 
 // 5. Data Types
+/*
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
@@ -50,3 +51,24 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null);
+*/
+
+///////////////////// 7. Let, const, and var /////////////////////
+
+// Declare let
+let age = 20;
+age = 21;
+console.log(age);
+
+// Declare const
+const birthYear = 1999;
+console.log(birthYear);
+
+// Declare var prior ES6
+var job = 'Programmer';
+job = 'Teacher';
+console.log(job);
+
+// Not recommended
+firstName = 'TDQ';
+console.log(firstName);
