@@ -167,8 +167,16 @@ console.log(`Just a regular string ....`);
 console.log(`sdkvnskd 
 insiododsvs`); */
 
+////////////////// 12. Taking Decision IF else statement //////////////////
 
-
+/* const birthYear = 1999;
+let century;
+ if (birthYear <= 2000) {
+     century = 20;
+ } else {
+     century = 21;
+ }
+ console.log(century); */
 
 
 
