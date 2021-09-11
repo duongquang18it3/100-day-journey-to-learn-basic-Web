@@ -149,4 +149,29 @@ const markHigherBMI = BMIM > BMIJ;
 console.log(BMIM, BMIJ, markHigherBMI); */
 
 
-///////////////// 11. 
+///////////////// 11. String and template literals /////////////
+
+/* const firstName = 'Quang ';
+const job = 'Engineer';
+const birthYear = 1999;
+const year = 2021;
+
+const quang = ('I am ' + firstName + (year - birthYear) + ' year old ,a ' + job);
+console.log(quang);
+
+const newQuang = `I'am ${firstName}, a ${year - birthYear} year old ${job}`;
+console.log(newQuang);
+
+console.log(`Just a regular string ....`);
+
+console.log(`sdkvnskd 
+insiododsvs`); */
+
+
+
+
+
+
+
+
+
