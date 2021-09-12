@@ -236,4 +236,22 @@ if (height) {
   console.log('Height is UNDEFINED');
 } */
 
+////////////////// 16. Equality operator == vs === ////////////
 
+const age = '22';
+if (age === 22 ) console.log('You just became an adult strict');
+if (age == 22) console.log('You just became adult (loose)');
+
+const favourite = Number(prompt("What's your favorite number ?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 22){
+    console.log('Wow, amazing good job. It is accually 22')
+} else if (favourite === 15) {
+    console.log('Wow amazing good job . It is 15')
+} else {
+    console.log('number is not 22 or 15');
+}
+
+if (favourite !== 23) console.log('Why not 23 ? Huhu');
