@@ -198,14 +198,14 @@ if (BMIM > BMIJ) {
 /////////////// 14. Type conversion and coercion( ep kieu )//////////////
 
 // Type conversion
-const birthYear = '1999';
+/* const birthYear = '1999';
 console.log(Number(birthYear), birthYear);
 console.log(2021 - Number(birthYear));
 
 console.log(String(22), 23);
 
 // Type conercion
-/* console.log('I am ' + 23 + ' year old !');
+console.log('I am ' + 23 + ' year old !');
 console.log('22' - '10' - 2);
 console.log('22' / '2');
 console.log('22' * '2');
@@ -214,6 +214,26 @@ let n = '1' + 1; //'11'
 n = n - 1; //10;
 console.log(n); */
 
+///////////////// 15. Truthy and Falsy Values ///////////////
+// 5 falsy values: 0, '', undefined, null, NaN
+/* console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Jonas'));
+console.log(Boolean({}));
+console.log(Boolean(''));
 
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log('You should get a job!');
+}
+
+let height = 0;
+if (height) {
+  console.log('YAY! Height is defined');
+} else {
+  console.log('Height is UNDEFINED');
+} */
 
 
