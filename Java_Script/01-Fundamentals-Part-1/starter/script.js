@@ -195,8 +195,24 @@ if (BMIM > BMIJ) {
 }
  */
 
+/////////////// 14. Type conversion and coercion( ep kieu )//////////////
 
+// Type conversion
+const birthYear = '1999';
+console.log(Number(birthYear), birthYear);
+console.log(2021 - Number(birthYear));
 
+console.log(String(22), 23);
+
+// Type conercion
+/* console.log('I am ' + 23 + ' year old !');
+console.log('22' - '10' - 2);
+console.log('22' / '2');
+console.log('22' * '2');
+
+let n = '1' + 1; //'11'
+n = n - 1; //10;
+console.log(n); */
 
 
 
