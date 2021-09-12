@@ -178,6 +178,24 @@ let century;
  }
  console.log(century); */
 
+ ////////////// 13. Coding challenge ///////////////
+
+/* const massM = 95;
+const heightM = 1.88;
+const massJ = 85;
+const heightJ = 1.76;
+
+const BMIM = massM / heightM ** 2;
+const BMIJ = massJ / heightJ * heightJ;
+
+if (BMIM > BMIJ) {
+    console.log(`Mark's BMI (${BMIM}) is higher than John's (${BMIJ}) `);
+} else {
+    console.log(`Mark's BMI (${BMIM}) is lower than John's (${BMIJ}) `);
+}
+ */
+
+
 
 
 
