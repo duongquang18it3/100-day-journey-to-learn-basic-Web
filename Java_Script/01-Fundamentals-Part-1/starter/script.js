@@ -238,7 +238,7 @@ if (height) {
 
 ////////////////// 16. Equality operator == vs === ////////////
 
-const age = '22';
+/* const age = '22';
 if (age === 22 ) console.log('You just became an adult strict');
 if (age == 22) console.log('You just became adult (loose)');
 
@@ -254,4 +254,31 @@ if (favourite === 22){
     console.log('number is not 22 or 15');
 }
 
-if (favourite !== 23) console.log('Why not 23 ? Huhu');
+if (favourite !== 23) console.log('Why not 23 ? Huhu'); */
+
+////////////// 18. Logical Operator////////////////
+
+/* const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log('Sarah is able to drive!');
+// } else {
+//   console.log('Someone else should drive...');
+// }
+
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log('Sarah is able to drive!');
+} else {
+  console.log('Someone else should drive...');
+} */
+
+////////////////////// 19. Coding Challenge 3 /////////////////
+
