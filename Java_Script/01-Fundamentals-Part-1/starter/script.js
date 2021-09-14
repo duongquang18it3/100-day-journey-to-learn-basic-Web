@@ -365,10 +365,10 @@ const me = 'Jonas';
 console.log(`I'm ${2037 - 1991} years old ${me}`); */
 
 ///////////////// 22.The Conditional (Ternary) Operator//////////
-
-/* const age = 23;
+/* 
+const age = 23;
 // age >= 18 ? console.log('I like to drink wine 🍷') : console.log('I like to drink water 💧');
-
+/* 
 const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
 console.log(drink);
 
@@ -380,11 +380,10 @@ if (age >= 18) {
 }
 console.log(drink2);
 
-console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💧'}`); */
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💧'}`); */ 
 
 /////////////////////// 23. Coding Challenge 4///////////
-/*
-const bill = 430;
+
+/* const bill = 430;
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
-console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
-*/
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`); */
