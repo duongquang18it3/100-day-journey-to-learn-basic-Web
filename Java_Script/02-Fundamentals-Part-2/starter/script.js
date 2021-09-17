@@ -67,4 +67,21 @@ function fruitProcessor (apples, oranges){
 }
 console.log(fruitProcessor(4, 5)); */
 
-///////// 3.6
+///////// 3.6 Reviewing Functions ////////
+
+/* function calcAge(birthYeah){
+    return 2021 - birthYeah;
+}
+function yearUntilRetirement (birthYeah, firstName){
+    const age = calcAge(birthYeah);
+    const retirement = 65 - age;
+    if(retirement > 0){
+        console.log(`${firstName} retires in ${retirement}`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retied :))`);
+        return -1;
+    }
+}
+console.log(yearUntilRetirement(1999, 'Quang')); */
+
