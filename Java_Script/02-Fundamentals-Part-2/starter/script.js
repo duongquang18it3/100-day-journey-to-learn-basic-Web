@@ -85,3 +85,24 @@ function yearUntilRetirement (birthYeah, firstName){
 }
 console.log(yearUntilRetirement(1999, 'Quang')); */
 
+//////// 3.7 Coding Challenge 1//////
+/* const calcAverage = (a, b, c) => (a+b+c)/3;
+console.log(calcAverage(3,4,5));
+
+// Test 1
+
+let scoreD = calcAverage(58, 68, 97);
+let scoreK = calcAverage(25, 34, 27);
+console.log(scoreD, scoreK);
+const checkWinner = function (avgD, avgK){
+    if (avgD >= 2* avgK){
+        console.log(`Dolphin win ${avgD} and  Koaloas ${avgK}`);
+    } else if (avgK >= avgD){
+        console.log(`Koalas win ${avgK} and Dolphin ${avgK}`);
+    } else{
+        console.log("No team wins....");
+    }
+}
+checkWinner(scoreD, scoreK); */
+
+
