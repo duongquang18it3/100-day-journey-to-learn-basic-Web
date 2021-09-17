@@ -54,3 +54,17 @@ const yearUtilRetirement = (birthYeah, firstName) =>{
 console.log(yearUtilRetirement(1999,'Quang'));
 console.log(yearUtilRetirement(1999,'Bống'));
  */
+
+////////// 3.5 Function Calling other Function ////////
+
+/* function cutFruitPieces(fruit){
+    return fruit * 4;
+}
+function fruitProcessor (apples, oranges){
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    return `I have ${applePieces} of apple and ${orangePieces} of orange`;
+}
+console.log(fruitProcessor(4, 5)); */
+
+///////// 3.6
