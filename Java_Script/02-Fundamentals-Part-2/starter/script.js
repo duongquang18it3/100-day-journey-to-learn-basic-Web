@@ -33,10 +33,24 @@ function calcAge1 (birthYeah){
 };
 const age1 = calcAge1(1999);
 
-
 // Expressions
 const calcAge2 = function (birthYeah){
     return 2021 - birthYeah;
 };
 const age2 = calcAge2(1999);
 console.log(age1, age2); */
+
+//////////// 3.5 Arrow Function //////////
+/* const calcAge3 = birthYeah => 2021 - birthYeah;
+const age3 = calcAge3(1999);
+console.log(age3);
+
+const yearUtilRetirement = (birthYeah, firstName) =>{
+    const age = 2022 - birthYeah;
+    const ageRetirment = 65 - age;
+    return `${firstName} retirment in ${ageRetirment}`;
+} 
+
+console.log(yearUtilRetirement(1999,'Quang'));
+console.log(yearUtilRetirement(1999,'Bống'));
+ */
