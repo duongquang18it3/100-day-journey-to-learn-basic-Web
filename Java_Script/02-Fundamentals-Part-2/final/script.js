@@ -186,7 +186,8 @@ console.log(friends);
 // friends = ['Bob', 'Alice']
 
 const firstName = 'Jonas';
-const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];
+const jonas = [firstName, 'Schmedtmann', 2037 - 1991,
+ 'teacher', friends];
 console.log(jonas);
 console.log(jonas.length);
 
@@ -201,7 +202,8 @@ const age2 = calcAge(years[1]);
 const age3 = calcAge(years[years.length - 1]);
 console.log(age1, age2, age3);
 
-const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+const ages = [calcAge(years[0]), calcAge(years[1]),
+ calcAge(years[years.length - 1])];
 console.log(ages);
 
 

@@ -105,4 +105,40 @@ const checkWinner = function (avgD, avgK){
 }
 checkWinner(scoreD, scoreK); */
 
+///////////////////////////////////
+// 3.9 Introduction Array 
+/* const friend1 = ['Bong'];
+const friend2 = ['Thu'];
+const friend3 = ['Be'];
+
+const friends = ['Bong', 'Thu', 'Be'];
+console.log(friends);
+
+console.log(friends[0]);
+console.log(friends.length);
+console.log(friends[friends.length-1]);
+
+friends[2] = 'Le Tuyet Thu';
+console.log(friends);
+//friends = ['Quang','Dep trai']; Don't do this;
+
+const firstName = 'Tran ';
+const quang = [firstName, 'Quang', 2021-1999, 'student', friends];
+console.log(quang);
+console.log(quang.length);
+
+//Exercise
+const calcAge = function (birthYeah){
+    return 2021 - birthYeah;
+}
+const years = [1990,1992,1993,1994,1995];
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3);
+const ages = [age1,age2, age3];
+console.log(ages); */
+
+
 
