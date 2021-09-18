@@ -140,5 +140,39 @@ console.log(age1, age2, age3);
 const ages = [age1,age2, age3];
 console.log(ages); */
 
+/////////////////////////////////////
+// 3.10 Basic Array Operations (Methods)
+/* const friends = ['Bong', 'Thu', 'Be'];
+console.log(friends);
 
+// Add Elements
+const newLength = friends.push('Quang');// Add last Element
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John'); // Add first element
+console.log(friends);
+
+// Remove elements
+friends.pop();//Remove last Element
+console.log(friends);
+const popped = friends.pop();
+console.log(friends);
+console.log(popped);
+
+friends.shift();//First
+console.log(friends);
+
+console.log(friends.indexOf('Thu'));
+console.log(friends.indexOf('Quang Dep Trai'));
+
+friends.push('Quang Dep Trai');
+friends.unshift(22);
+console.log(friends.includes('Thu'));
+console.log(friends.includes('Quang xau trai'));
+console.log(friends.includes(22));
+
+if (friends.includes('Thu')){
+    console.log('You have a friend called Thu Dep Gai');
+} */
 
