@@ -189,3 +189,23 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(bills, tips, totals); */
+
+//////////////////////////////////////////////
+// 3.11 Introduction of Objects
+/* const thuArray = [
+    'Le',
+    'Tuyet Thu',
+    2021-199,
+    'student',
+    ['Tran', 'Duong', 'Quang']
+];
+console.log(thuArray);
+const quang = {
+    firstName: 'Le',
+    lastName: 'Tuyet Thu',
+    age: 2021 - 1999,
+    job: 'student',
+    friends: ['Quang', 'Dep', 'Trai']
+};
+console.log(quang); */
+
