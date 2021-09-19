@@ -209,3 +209,23 @@ const quang = {
 };
 console.log(quang); */
 
+////////////////////////////
+// 3.12 Dot vs. Bracket Notation
+/* const quang = {
+    firstName: 'Le',
+    lastName: 'Tuyet Thu',
+    age: 2021 - 1999,
+    job: 'student',
+    friends: ['Quang', 'Dep', 'Trai']
+};
+console.log(quang);
+
+console.log(quang.lastName);
+console.log(quang['lastName']);
+
+const nameKey = 'Name';
+console.log(quang['first'+ nameKey]);
+console.log(quang['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Quang'); */
+
