@@ -227,5 +227,43 @@ const nameKey = 'Name';
 console.log(quang['first'+ nameKey]);
 console.log(quang['last' + nameKey]);
 
-const interestedIn = prompt('What do you want to know about Quang'); */
+const interestedIn = prompt('What do you want to know about Quang'); 
 
+
+quang.location = 'Da Nang';
+quang['twitter'] = '@sdbvibsldvjs';
+console.log(quang);
+
+
+
+*/
+///////////////////////////
+//3.13 Object Method
+
+const quang = {
+    firstName: 'Le',
+    lastName: 'Tuyet Thu',
+    birthYear: 1999,
+    job: 'student',
+    friends: ['Quang', 'Dep', 'Trai'],
+    hasDriversLicense: true,
+
+    /* calcAge: function(){
+        console.log(this);
+        return 2021 - this.birthYear;
+    } */
+    calcAge : function (){
+        // Create new properties
+        this.age = 2021-  this.birthYear;
+        return this.age
+    },
+
+    getSumary: function(){
+        return `${this.firstName} is a ${this.calcAge()} year old, 
+        ${this.job}, and she has ${this.hasDriversLicense ? 'a': 'no'} driver's license. `
+
+    }
+};
+console.log(quang.calcAge());
+console.log(quang.age);
+console.log(quang.getSumary());
