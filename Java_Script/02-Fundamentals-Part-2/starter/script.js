@@ -240,7 +240,7 @@ console.log(quang);
 ///////////////////////////
 //3.13 Object Method
 
-const quang = {
+/* const quang = {
     firstName: 'Le',
     lastName: 'Tuyet Thu',
     birthYear: 1999,
@@ -252,7 +252,7 @@ const quang = {
         console.log(this);
         return 2021 - this.birthYear;
     } */
-    calcAge : function (){
+   /*  calcAge : function (){
         // Create new properties
         this.age = 2021-  this.birthYear;
         return this.age
@@ -266,4 +266,40 @@ const quang = {
 };
 console.log(quang.calcAge());
 console.log(quang.age);
-console.log(quang.getSumary());
+console.log(quang.getSumary());  */
+
+////////////////////////////////////
+// 3.14 Coding challenge'
+
+/* const mark = {
+    fullname: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI : function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+      this.bmi = this.mass / this.height ** 2;
+      return this.bmi;
+    }
+  };
+mark.calcBMI();
+john.calcBMI();
+console.log(mark);
+console.log(john);
+console.log(mark.bmi);
+console.log(john.bmi);
+
+// "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`)
+  } else if (john.bmi > mark.bmi) {
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`)
+  } */
