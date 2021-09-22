@@ -310,3 +310,44 @@ if (mark.bmi > john.bmi) {
 for ( let rep = 1; rep <= 10; rep++){
     console.log(`Lifting weights repetition ${rep}.`);
 } */
+///////////////
+// 3.16 Looping Arrays, Breaking, and Continuing
+
+const thuArray = [
+    'Le',
+    'Tuyet Thu',
+    2021-199,
+    'student',
+    ['Tran', 'Duong', 'Quang'],
+    true
+];
+const types = [];
+for (let i = 0; i < thuArray.length; i++){
+    //Reading from thuArray
+    console.log(thuArray[i], typeof thuArray[i]);
+    //Filling types array
+    //types[i] = typeof thuArray[i];
+    types.push(typeof thuArray[i]);
+}
+console.log(types);
+
+// Calc age IF you have birthYear
+
+const birthYeah = [1995,1996,1997];
+const ages = [];
+for (let i = 0; i < birthYeah.length; i++){
+    ages.push(2021-birthYeah[i]);
+}
+console.log(ages);
+
+// Continue and break
+console.log('------- ONLY STRING ------');
+for (let i = 0; i < thuArray.length; i++){
+    if(typeof thuArray[i] !== 'string') continue;
+    console.log(thuArray[i], ' is type: ' ,typeof thuArray[i]);
+}
+console.log('------- ONLY STRING ------');
+for (let i = 0; i < thuArray.length; i++){
+    if(typeof thuArray[i] === 'number') break;
+    console.log(thuArray[i], ' is type: ' ,typeof thuArray[i]);
+}
