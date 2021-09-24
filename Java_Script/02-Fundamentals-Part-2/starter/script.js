@@ -378,3 +378,5 @@ const jonas = [
       console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
     }
   } */
+  ////////////
+  Bài tap thoi
