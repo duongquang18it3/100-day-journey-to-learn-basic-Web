@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // 3.2 Acvating Strict Mode ////////////////
 
 /* let hasDriversLicense = false;
@@ -106,7 +106,7 @@ const checkWinner = function (avgD, avgK){
 checkWinner(scoreD, scoreK); */
 
 ///////////////////////////////////
-// 3.9 Introduction Array 
+// 3.9 Introduction Array
 /* const friend1 = ['Bong'];
 const friend2 = ['Thu'];
 const friend3 = ['Be'];
@@ -252,7 +252,7 @@ console.log(quang);
         console.log(this);
         return 2021 - this.birthYear;
     } */
-   /*  calcAge : function (){
+/*  calcAge : function (){
         // Create new properties
         this.age = 2021-  this.birthYear;
         return this.age
@@ -439,4 +439,5 @@ console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
-  
+
+
