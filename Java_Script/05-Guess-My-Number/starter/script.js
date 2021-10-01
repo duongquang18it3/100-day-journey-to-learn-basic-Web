@@ -91,7 +91,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highscore;
     }
   } else if (guess !== secretNumber) {
-    if (guess > 1) {
+    if (score > 1) {
       displayMessage(guess > secretNumber ? 'Too high' : 'Too low');
       score--;
       document.querySelector('.score').textContent = score;
