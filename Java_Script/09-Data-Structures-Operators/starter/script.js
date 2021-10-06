@@ -50,7 +50,6 @@ const flights =
 // Data needed for first part of the section
 */
 
-
 //Destructuring Objects
 const restaurant = {
   name: 'Classico Italiano',
@@ -75,7 +74,41 @@ const restaurant = {
   },
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  }
-}; 
+  },
+  orderDelivery: function ({ starterIndex = 1, mainIndex = 2, time, address }) {
+    console.log(`Order received ! ${this.starterMenu[starterIndex]} 
+    and ${this.mainMenu[mainIndex]} will be delivered to 
+     ${address} at ${time} `);
+  },
+};
 
+restaurant.orderDelivery({
+  time: '11:00',
+  address: 'Da Nang Viet Nam',
+  
+});
 
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+//Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+// Mutating Values
+let a = 11;
+let b = 99;
+const obj = { a: 111, b: 222, c: 333 };
+({ a, b } = obj);
+console.log(a, b);
+
+//Nested obj
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
