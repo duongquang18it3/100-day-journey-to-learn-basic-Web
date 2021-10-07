@@ -354,4 +354,11 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'onion', 'cheess');
 // -> Nếu cái restaurant.orderPizza tồn tại thì tiếp tục evulating
-///////////////////
+///////////////////////////
+// The nullish Coalescing Operator
+restaurant.orderGuest = 0;
+const guests = restaurant.orderGuest || 10;
+console.log(guests);
+
+const guestCorrect = restaurant.orderGuest ?? 10;
+console.log(guestCorrect);
