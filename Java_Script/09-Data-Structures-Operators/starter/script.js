@@ -199,7 +199,7 @@ console.log(restaurantCopy.name);
 console.log(restaurant.name); */
 
 // Rest pattern and parameters.
-const restaurant = {
+/* const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -276,4 +276,81 @@ const x = [20, 30, 40];
 add(...x);
 
 restaurant.orderPizza('mushroom', 'chess', 'onion', 'olives');
-restaurant.orderPizza('mushroom');
+restaurant.orderPizza('mushroom'); */
+
+// Short Circuiting && and ||;
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({ starterIndex = 1, mainIndex = 2, time, address }) {
+    console.log(`Order received ! ${this.starterMenu[starterIndex]} 
+    and ${this.mainMenu[mainIndex]} will be delivered to 
+     ${address} at ${time} `);
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your declicioius pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
+};
+
+console.log('---------------------OR-------------');
+console.log(3 || 'Quang');
+console.log('' || 'Quang');
+console.log(true || 0);
+console.log(undefined || null);
+// xet value đầu nếu là false thì tiêp tục xét giá trị tieeso theo
+// nếu giá trị tiếp theo là true thì logs giá trị tiếp theo
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuest = 22;
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+console.log('-------------------AND-------------');
+
+console.log(0 && 'Quang');
+// - > 0
+console.log(45 && 'Quang');
+// -> Quang because it return last value true if first value is true
+
+console.log('hello' && 23 && 'null' && 'Jonas');
+// -> Tra về null khi xét hello và 23 là true tới khi gặp null là false thì trả về false;
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'onion', 'cheess');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'onion', 'cheess');
+// -> Nếu cái restaurant.orderPizza tồn tại thì tiếp tục evulating
