@@ -51,7 +51,7 @@ const flights =
 */
 
 //Destructuring Objects
-const restaurant = {
+/* const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -111,4 +111,89 @@ console.log(a, b);
 const {
   fri: { open, close },
 } = openingHours;
-console.log(open, close);
+console.log(open, close); */
+
+// The Spread Operator
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({ starterIndex = 1, mainIndex = 2, time, address }) {
+    console.log(`Order received ! ${this.starterMenu[starterIndex]} 
+    and ${this.mainMenu[mainIndex]} will be delivered to 
+     ${address} at ${time} `);
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your declicioius pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+};
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, 'Mi tom'];
+console.log(...newMenu);
+
+// Copy array;
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(...mainMenuCopy);
+//Join 2 array
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(...menu);
+
+// Interable array, string, maps, sets. NOT Object.
+const str = 'Quang';
+const letters = [...str, ' ', ...'Thu'];
+console.log(letters);
+console.log(...str);
+
+const ingredient = [
+  // prompt('Let make Pasta!. Ingredient 1 ?'),
+  // prompt('Ingredient 2 ?'),
+  // prompt('ingredient 3'),
+];
+console.log(ingredient);
+restaurant.orderPasta(ingredient[0], ingredient[1], ingredient[2]);
+restaurant.orderPasta(...ingredient);
+
+// Objects
+console.log({ ...restaurant });
+const newRestaurant = { foundedIN: 1998, ...restaurant, fouder: 'Quang' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+console.log(restaurantCopy);
+restaurantCopy.name = 'Thu Quang Restaurant';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
