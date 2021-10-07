@@ -354,3 +354,4 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'onion', 'cheess');
 // -> Nếu cái restaurant.orderPizza tồn tại thì tiếp tục evulating
+///////////////////
