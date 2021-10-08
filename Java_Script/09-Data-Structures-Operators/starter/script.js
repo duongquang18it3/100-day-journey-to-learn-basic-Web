@@ -354,6 +354,9 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'onion', 'cheess');
 // -> Nếu cái restaurant.orderPizza tồn tại thì tiếp tục evulating
+
+
+
 ///////////////////////////
 // The nullish Coalescing Operator
 restaurant.orderGuest = 0;
@@ -522,7 +525,7 @@ for (const [i, el] of menu.entries()) {
 
 // Enhanced Object Literals
 const weekdays = ['mon', 'tue', 'web', 'thu', 'fri', 'sat', 'sun'];
-const hours = {
+const openingHours = {
   [weekdays[3]]: {
     open: 12,
     close: 22,
@@ -546,7 +549,7 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  hours,
+  openingHours,
   // write function shorter
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -567,4 +570,21 @@ const restaurant = {
     console.log(otherIngredient);
   },
 };
-console.log(restaurant.hours);
+
+// Optional chaining
+
+console.log(restaurant.openingHours);
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+console.log(restaurant.openingHours.fri.open);
+// console.log(restaurant.openingHours.mon.open);
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(day, open);
+}
