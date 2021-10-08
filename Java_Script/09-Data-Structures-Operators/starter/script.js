@@ -573,7 +573,7 @@ const restaurant = {
 
 // Optional chaining
 
-console.log(restaurant.openingHours);
+/* console.log(restaurant.openingHours);
 
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
@@ -604,4 +604,37 @@ const users = [
 console.log(users[0]?.name ?? 'No name');
 // -> Quang
 if (users.length > 0) console.log(users[0].name);
-else console.log('no name');
+else console.log('no name'); */
+
+//////////////////////////////////
+// Looping object : object key, values , and Entries
+
+// Looping array
+const arr = [...restaurant.mainMenu];
+console.log(arr);
+for (const item of arr) console.log(item);
+
+//Looping Object
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} day: `;
+for (const day of properties) {
+  openStr += `${day} ,`;
+}
+console.log(openStr);
+
+// for (const day of Object.keys(openingHours))
+// console.log(day);
+//Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
