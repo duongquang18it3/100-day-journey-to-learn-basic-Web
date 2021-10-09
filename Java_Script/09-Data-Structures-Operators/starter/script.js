@@ -665,7 +665,7 @@ game, it will look like this:
  Lewandowski: 2
 }
 GOOD LUCK � */
-const game = {
+/* const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
   players: [
@@ -704,7 +704,7 @@ const game = {
     x: 3.25,
     team2: 6.5,
   },
-};
+};  */
 
 // const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 // console.log(menu);
@@ -712,10 +712,10 @@ const game = {
 // // for (const item of menu) console.log(item);
 // for (const [i, el] of menu.entries()) {
 //   console.log(`${i + 1}: ${el}`);
-// } */
+// }
 
 // 1.
-for (const [i, player] of game.scored.entries())
+/* for (const [i, player] of game.scored.entries())
   console.log(`Goal ${i + 1}: ${player}`);
 
 // 2.
@@ -742,5 +742,62 @@ for (const player of game.scored) {
 
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
-console.log(scorers);
+console.log(scorers); */
+
+//////////////////////////////////////////////
+// 9.14 Sets
+
+// Set is collection of unique values -> a set can never have any duplicate.
+
+/* const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+// The order of elements is irrelevant -> not index[0];
+
+console.log(new Set('Jonas'));
+//size of set
+console.log(ordersSet.size);
+
+//check set exist
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+// add new element
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);
+
+// delete a element
+ordersSet.delete('Pizza');
+console.log(ordersSet);
+
+// clear Set
+// ordersSet.clear();
+// console.log(ordersSet);
+
+// Iterable // Loop Set
+for (const order of ordersSet) console.log(order);
+
+// Remove duplicate value in an array by use SET;
+
+const staff = ['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef'];
+const staffUnique = new Set(staff);
+
+//New array by set and []
+const staffArr = [...new Set(staff)];
+console.log(staffUnique);
+console.log('------New Array from Set--------------');
+console.log(staffArr);
+
+console.log(new Set(['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef']).size);
+console.log(new Set('Jonasskjdnvksdnvk00').size); */
+
 
