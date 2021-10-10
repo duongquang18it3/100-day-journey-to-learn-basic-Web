@@ -800,4 +800,60 @@ console.log(staffArr);
 console.log(new Set(['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef']).size);
 console.log(new Set('Jonasskjdnvksdnvk00').size); */
 
+///////////////////////////////////////////
+// 9.15 MAP
 
+// Map is a data structue that we can use map value to key
+// Different Map vs Obj is Maps the keys can have any type
+// Obj - the keys alwway strings.
+// In Map we can have any type of key it can object, array, or other map
+
+// Create a empty Map we can use new Map();
+const rest = new Map();
+
+// Fill up map (add) use two argument
+// the first is key and the second is name of the key
+rest.set('name', 'Quang Thu restaurant');
+rest.set(1, 'Quy Nhơn, Bình Định');
+console.log(rest);
+console.log(rest.set(2, 'Hai Chau, Da Nang'));
+
+// We can chain the next set
+
+rest
+  .set('categories', ['Banh trang tron', 'Sup cua', 'Rau song'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open: 🧡💛❤')
+  .set(false, 'We are closed : ((');
+
+// Read data from map -> use get
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+// Now , we use boolean keys to check value time us below
+
+// const time = 21;
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// Method
+// Check if a map contain a certain key
+console.log(rest.has('categories'));
+
+// delete a key 
+rest.delete(2);
+console.log(rest);
+
+// clear rest
+// rest.clear();
+// Size of Maps
+console.log(rest.size);
+
+// We can face use arrays or objects as map keys
+
+const arr = [1,2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest.get(arr));
