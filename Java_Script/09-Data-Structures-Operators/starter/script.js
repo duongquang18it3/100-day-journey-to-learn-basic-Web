@@ -969,7 +969,7 @@ of the game, like this:
 
 GOOD LUCK 😀
 */
-const gameEvents = new Map([
+/* const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '� Substitution'],
   [47, '⚽ GOAL'],
@@ -1002,4 +1002,59 @@ for(const [min, event] of gameEvents){
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
+ */
 
+//////////////////////////////////////
+// 9.19 Working with String Part 1
+
+// New String by new keywords
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(airline);
+console.log(plane);
+
+// Logs letter of string
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log(airline[0]);
+
+// Logs lenght of string
+console.log(airline.length);
+console.log('Quang'.length);
+
+// Logs index of one letter in string
+console.log('Logs index of one letter in string');
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+// Slice string at an position in string use 'slice' keyword.
+console.log('-----------slice--------------');
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+// Function check middle seat on plane
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat');
+  else console.log('You got lucky ❤');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+console.log(new String('jonas').slice(1));
+console.log(typeof new String('jonas').slice(1));
