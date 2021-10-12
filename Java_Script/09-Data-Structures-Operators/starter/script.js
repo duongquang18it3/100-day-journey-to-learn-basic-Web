@@ -1061,7 +1061,7 @@ console.log(typeof new String('jonas').slice(1)); */
 
 //////////////////////////////////////////////
 // Working with String Part 2
-
+/* 
 const airline = 'TAP Air portugal';
 
 console.log(airline.toLowerCase());
@@ -1122,4 +1122,52 @@ const checkBaggage = function (items) {
 
 checkBaggage('I have a laptop, some Food and a pocket Knife');
 checkBaggage('Socks and camera');
-checkBaggage('Got some snacks and a gun for protection');
+checkBaggage('Got some snacks and a gun for protection'); */
+
+//////////////////////////////////////////
+// Working with String Part 3
+
+// Split
+/* console.log('a+very+nice+string'.split('+'));
+console.log('Le Tuyet Thu'.split(' '));
+
+const [firstName, lastName] = 'Tuyet Thu'.split(' ');
+console.log(`Mrs.`, firstName, lastName.toUpperCase());
+
+const capitalizeName = function(name){
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names){
+    namesUpper.push(n.replace(n[0],n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+}
+
+capitalizeName('le tuyet thu');
+
+// Padding 
+const message = 'Go to gate 22!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Thu'.padStart(25, '+').padEnd(35, '+'));
+
+//
+const maskCreditCard = function(number){
+  const str = number + '';
+  const last = str.slice(-4);
+ return last.padStart(str.length, '*');
+}
+
+console.log(maskCreditCard(2324546453434));
+console.log(maskCreditCard('245452324546453434'));
+
+// repeat 
+
+const message2 = 'Bad weather...All Departues Deplayed...';
+console.log(message2.repeat(5));
+
+
+const planesInline = function(n){
+  console.log(`There are ${n} planes in line ${'🛬'.repeat(n)}`);
+} ;
+planesInline(5);
+planesInline(4); */
