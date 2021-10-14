@@ -63,9 +63,9 @@ newPassport(thu);
 checkIn(flight,thu); */
 
 /////////////////////////////////////
-// Function Accepting Callback Function 
+//  10.5 Function Accepting Callback Function 
 
-const oneWord = function(str){
+/* const oneWord = function(str){
   return str.replace(/ /g, '').toLowerCase();
 };
 
@@ -89,4 +89,21 @@ const high5 = function () {
   console.log('👋');
 };
 document.body.addEventListener('click', high5);
-['Jonas', 'Martha', 'Adam'].forEach(high5);
+['Jonas', 'Martha', 'Adam'].forEach(high5); */
+
+////////////////////////////////////////////
+// 10.6 Function returning function
+/* const greet = function(greeting){
+  return function(name){
+    console.log(`${greeting} ${name}`);
+  }
+};
+
+const greeterHey = greet('Hey!');
+greeterHey('Quang');
+greet('Hello')('Quang');
+
+// Challenge arrow function
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('Hi')('Thu');
+ */
