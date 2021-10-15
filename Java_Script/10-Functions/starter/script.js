@@ -63,7 +63,7 @@ newPassport(thu);
 checkIn(flight,thu); */
 
 /////////////////////////////////////
-//  10.5 Function Accepting Callback Function 
+//  10.5 Function Accepting Callback Function
 
 /* const oneWord = function(str){
   return str.replace(/ /g, '').toLowerCase();
@@ -107,3 +107,62 @@ greet('Hello')('Quang');
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 greetArr('Hi')('Thu');
  */
+////////////////////////////////////////////
+// 10.7 The call and apply methord
+
+/* const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book:function();
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
+    );
+    this.bookings.push({flight: `${this.iataCode} ${flightNum}`, name})
+  },
+};
+
+lufthansa.book(199, 'Thu');
+lufthansa.book(789, 'Quang');
+console.log(lufthansa);
+
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+// Does NOT work 
+// because In the regular function, this keyword will undefiend
+// book(166,'Bong');
+
+// book function really is an object;
+// Objcet have method therefore array have function
+// Call method
+book.call(eurowings,1223,'Le Tuyet Thu');
+console.log(eurowings);
+
+book.call(lufthansa,3454,'Tran Duong Quang');
+console.log(lufthansa);
+
+const swis = {
+  airline : 'VietNam',
+  iataCode:'VN',
+  bookings : [],
+};
+
+book.call(swis,4524,'Trn Qusng');
+
+// Apply does receive list argument but can take array of arguments
+
+const flightData = [345, 'Quang Dep Trai'];
+book.apply(swis, flightData);
+console.log(swis);
+
+book.call(eurowings, ...flightData);
+console.log(eurowings); */
+
+
