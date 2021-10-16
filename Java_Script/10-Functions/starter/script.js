@@ -279,3 +279,24 @@ document
 poll.displayResults.call({answers: [5,3,3,2]}, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }); */
+
+////////////////////////////////////
+// Immediately Invoked Function Expressions (IIFE)
+
+const runOnce = function(){
+  console.log('This will never run agian');
+};
+runOnce();
+
+(function(){
+  console.log('This will never run agian');
+})();
+
+(()=>console.log('This will ALSO never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+console.log(notPrivate);
