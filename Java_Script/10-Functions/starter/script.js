@@ -110,7 +110,7 @@ greetArr('Hi')('Thu');
 ////////////////////////////////////////////
 // 10.7 The call and apply methord
 
-/* const lufthansa = {
+const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
   bookings: [],
@@ -119,14 +119,13 @@ greetArr('Hi')('Thu');
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
     );
-    this.bookings.push({flight: `${this.iataCode} ${flightNum}`, name})
+    this.bookings.push({ flight: `${this.iataCode} ${flightNum}`, name });
   },
 };
 
-lufthansa.book(199, 'Thu');
-lufthansa.book(789, 'Quang');
+lufthansa.book(199, 'ER');
+lufthansa.book(789, 'Asia');
 console.log(lufthansa);
-
 
 const eurowings = {
   airline: 'Eurowings',
@@ -135,34 +134,74 @@ const eurowings = {
 };
 
 const book = lufthansa.book;
-// Does NOT work 
+// Does NOT work
 // because In the regular function, this keyword will undefiend
 // book(166,'Bong');
 
 // book function really is an object;
 // Objcet have method therefore array have function
 // Call method
-book.call(eurowings,1223,'Le Tuyet Thu');
+book.call(eurowings, 1223, 'Le Tuyet Thu');
 console.log(eurowings);
 
-book.call(lufthansa,3454,'Tran Duong Quang');
+book.call(lufthansa, 3454, 'Tran Duong Quang');
 console.log(lufthansa);
 
 const swis = {
-  airline : 'VietNam',
-  iataCode:'VN',
-  bookings : [],
+  airline: 'VietNam',
+  iataCode: 'VN',
+  bookings: [],
 };
 
-book.call(swis,4524,'Trn Qusng');
+book.call(swis, 4524, 'Trn Qusng');
 
 // Apply does receive list argument but can take array of arguments
 
-const flightData = [345, 'Quang Dep Trai'];
+const flightData = [345, 'Vietnam'];
 book.apply(swis, flightData);
 console.log(swis);
 
 book.call(eurowings, ...flightData);
-console.log(eurowings); */
+console.log(eurowings);
 
+//////////////////////////////////////////
+// 10.8 The bind method
 
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swis);
+bookEW(34, 'Quang');
+
+const bookEW22 = book.bind(eurowings, 23);
+bookEW22('Jonas Schmedtmann');
+bookEW22('Nguyen Van A');
+
+// With even Listener
+lufthansa.planes = 300;
+lufthansa.buyPlane = function(){
+  console.log(this);
+  this.planes ++;
+  console.log(this.planes);
+};
+// Use bind because bind return new function, and in this case we are passing a function an not to call it
+document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200)); 
+
+// Now, In this function, we are not use this keyword, so we don't care and use null for function
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+// Now, this challenge use just function retrun new function
+
+const addTax1 = function(rate){
+  return function(value){
+    console.log(value + rate * value );
+  }
+};
+const Tax = addTax1(0.2);
+Tax(230);
+Tax(200);
