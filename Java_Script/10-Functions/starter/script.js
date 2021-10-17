@@ -283,7 +283,7 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }); */
 ////////////////////////////////////
 // Immediately Invoked Function Expressions (IIFE)
 
-const runOnce = function(){
+/* const runOnce = function(){
   console.log('This will never run agian');
 };
 runOnce();
@@ -299,4 +299,23 @@ runOnce();
   var notPrivate = 46;
 }
 
-console.log(notPrivate);
+console.log(notPrivate); */
+
+///////////////////////////////////////////
+// Closure
+
+/* const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passenger`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker(); */
+
+
+ 
