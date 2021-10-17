@@ -74,3 +74,51 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// 11.2 Simple Array Method
+/* const arr = ['a','b','c','d','e'];
+console.log(arr);
+
+// SLICE METHOD
+console.log(arr.slice(2));
+console.log(arr.slice(2,4));
+console.log(arr.slice(-2));
+console.log(arr.slice(-1));
+console.log(arr.slice(-2,-1));
+console.log(arr.slice(-2,-1));
+console.log(arr.slice(1,-2));
+console.log(arr.slice());
+console.log([...arr]);
+
+// SPLICE METHOD se lay di mot phan trong mang tai vi tri 
+// va tra ve chinh no.
+// Lay di tat ca tu vi tri 2 cua mang, luc nay chi con lai
+// hai phan tu dung truoc
+// console.log(arr.splice(2));
+// => lay ra: ['c','d','e']
+arr.splice(-1);
+console.log(arr);
+// Lay ra va xoa di chu tai 1 va 2
+// -> ['a','b','c','d']
+arr.splice(1,2)
+console.log(arr);
+// => chi con la : ['a','d']
+
+// REVERSE: Dao nguoc
+
+const arr2 = ['f','g','h','i','j'];
+const arr3 = ['a','b','c','d','e'];
+arr2.reverse;
+console.log(arr2);
+// -> ['f', 'g', 'h', 'i', 'j']
+
+//CONCATENATE: ghep noi mang
+
+const letters = arr3.concat(arr2);
+console.log(letters);
+// concatenate 2 arrays use spread operator
+console.log([...arr2,...arr3]);
+// -> ['f', 'g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e']
+
+//JOIN
+
+console.log(letters.join('-')); */
