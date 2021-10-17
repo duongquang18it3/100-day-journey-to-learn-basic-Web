@@ -304,6 +304,7 @@ console.log(notPrivate); */
 ///////////////////////////////////////////
 // Closure
 
+// EX Create count function
 /* const secureBooking = function () {
   let passengerCount = 0;
   return function () {
@@ -315,7 +316,61 @@ console.log(notPrivate); */
 const booker = secureBooking();
 booker();
 booker();
-booker(); */
+booker();
 
+// EX2: Display error
+function createLogger(typelog) {
+  return function logger(message) {
+    console.log(`[${typelog}]: ${message}`);
+  };
+}
+const infoLogger = createLogger('Error');
+infoLogger('You are 1 error in line here.');
+infoLogger('You are a big error in this line.');
+const infoLogger2 = createLogger('Info');
+infoLogger('You are 1 info in line here.');
+infoLogger('You are a info error in this line.');
 
- 
+// Function returning function
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey!');
+greeterHey('Quang');
+greeterHey('TRan Duong Quang dep trai');
+greet('Hello')('Quang');
+
+// Challenge arrow function
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('Hi')('Thu');
+
+/// Create app
+function createCar() {
+  const cars = [];
+  return {
+    addCar(car) {
+      cars.push(car);
+    },
+    show() {
+      for (const i of cars.entries()) {
+        const [dem, xe] = i;
+        console.log(`${dem + 1}: ${xe}`);
+      }
+    },
+  };
+}
+
+const app = createCar();
+console.log(typeof app);
+app.addCar('BMW');
+app.addCar('Honda');
+app.addCar('Mercedes');
+app.addCar('Volvo');
+app.addCar('Audi');
+app.addCar('Lexus');
+app.addCar('Lexus');
+app.show(); */
+
