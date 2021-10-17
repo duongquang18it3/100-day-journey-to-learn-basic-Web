@@ -415,3 +415,15 @@ const boardPassengers = function (n, wait) {
   console.log(`Will start boarding in ${wait} seconds`);
 };
 boardPassengers(180, 2); */
+
+/////////////////////////////////////
+// Codig challenge 3
+
+/* (function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
+ */
