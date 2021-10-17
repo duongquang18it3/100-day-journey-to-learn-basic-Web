@@ -374,3 +374,44 @@ app.addCar('Lexus');
 app.addCar('Lexus');
 app.show(); */
 
+////////////////////////////////////////
+// More closure example
+// Exampple 1;
+
+/* let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 3);
+  };
+};
+
+const h = function () {
+  const b = 77;
+  f = function () {
+    console.log(b * 3);
+  };
+};
+
+g();
+f();
+
+console.dir(f);
+
+//Re-assingning f function
+
+h();
+f();
+console.log(f);
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 group, each with ${perGroup} passengers`);
+  }, wait * 1000);
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+boardPassengers(180, 2); */
