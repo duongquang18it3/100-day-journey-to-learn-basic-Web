@@ -256,3 +256,21 @@ const movementsDescriptions = movements.map(
     )} \n`
 );
 console.log(...movementsDescriptions); */
+
+/////////////////////////////////////////////////////////////
+// The filter method
+/* 
+const depoited = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(depoited);
+
+// use For of loop
+
+const depositedFor = [];
+for (const mov of movements) if (mov > 0) depositedFor.push(mov);
+console.log(depositedFor);
+
+// arrow function
+const withdrawals = movements.filter((mov)=>mov < 0);
+console.log(withdrawals); */
