@@ -80,12 +80,27 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+////////////////////////////////////////////////
+// 11.10 Computing Username
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
-/* const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
- */
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 /////////////////////////////////////////////////
 // 11.2 Simple Array Method
 /* const arr = ['a','b','c','d','e'];
@@ -209,19 +224,35 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
-/* const checkDogs = function (dogsJulia, dogsKate) {
-  const dogsJuliaCorrected = dogsJulia.slice();
-  dogsJuliaCorrected.splice(0, 1);
-  dogsJuliaCorrected.splice(-2);
+/*
+ */
 
-  const dogs = dogsJuliaCorrected.concat(dogsKate);
-  console.log(dogs);
-  dogs.forEach(function (dog, i) {
-    if (dog >= 3) {
-      console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`);
-    } else {
-      console.log(`Dog number ${i + 1} is still a puppy 🐶`);
-    }
-  });
-};
-checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]); */
+//////////////////////////////////////////////////
+// The map method
+/* 
+const euroToUsd = 1.1;
+
+// The map method return new array, so that why we are declare new varible
+// const movementUSD = movements.map(function (mov) {
+//   return mov * euroToUsd;
+// });
+
+const movementUSD = movements.map(mov => mov * euroToUsd);
+console.log(movements);
+console.log(movementUSD);
+
+// Use for of loop
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * euroToUsd);
+console.log(movementsUSDfor);
+
+// Use current index to description for movements ;
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movements ${i + 1} You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )} \n`
+);
+console.log(...movementsDescriptions); */
