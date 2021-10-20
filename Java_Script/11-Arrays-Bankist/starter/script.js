@@ -274,3 +274,15 @@ console.log(depositedFor);
 // arrow function
 const withdrawals = movements.filter((mov)=>mov < 0);
 console.log(withdrawals); */
+
+//////////////////////////////////////////////////////////////
+// The reduce method
+
+console.log(movements);
+
+// accumulator -> SHOWBALL
+
+const balance = movements.reduce(function (acc, mov) {
+  return acc + mov;
+}, 0);
+console.log(balance);
