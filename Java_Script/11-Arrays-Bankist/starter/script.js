@@ -80,9 +80,17 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
-////////////////////////////////////////////////
-// 11.10 Computing Username
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, +0);
+  labelBalance.textContent = `${balance} EURO`;
+};
+calcDisplayBalance(account1.movements);
+
+
+
+
+// 11.10 Computing Username
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -93,13 +101,8 @@ const createUsernames = function (accs) {
   });
 };
 createUsernames(accounts);
-console.log(accounts);
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, +0);
-  labelBalance.textContent = `${balance} EURO`;
-};
-calcDisplayBalance(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -344,3 +347,14 @@ const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 console.log(avg1, avg2); */
 
 //////////////////////////////////////////////////
+// The magic of chaining method.
+/* 
+const euroToUsd = 1.1;
+console.log(movements);
+
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * euroToUsd)
+  .reduce((acc, mov)=> acc+mov,0);
+console.log(totalDepositsUSD);
+ */
