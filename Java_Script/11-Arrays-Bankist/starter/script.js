@@ -172,7 +172,18 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
-// The findIndex and Close Account 
+// Request loan
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    currentAccount.movements.push(amount);
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
+// The findIndex and Close Account
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   if (
@@ -486,3 +497,15 @@ console.log(accounts);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account); */
+
+//////////////////////////////////////////////
+// The some and any mothod
+// EQUALITY
+console.log(movements);
+console.log(movements.includes(-130));
+
+// some method: condition
+
+console.log(movements.some(mov => mov === -130));
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
