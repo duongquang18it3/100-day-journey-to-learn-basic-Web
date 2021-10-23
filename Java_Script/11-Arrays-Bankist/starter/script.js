@@ -519,7 +519,52 @@ console.log(account4.movements.every(mov => mov > 0));
 // -> true: boi vi  moi phan tu trong mang deu lon hon 0
 
 // Separate callback
-const deposit = mov => mov >0;
+const deposit = mov => mov > 0;
 console.log(movements.every(deposit));
 console.log(movements.some(deposit));
 console.log(movements.filter(deposit));
+
+//////////////////////////////////////////////////
+// flat and flatMap
+
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [[4, 5], 6], 7, 8];
+console.log(arrDeep.flat(2));
+
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// console.log(allMovements.reduce((acc,i)=>acc+i,0));
+
+// flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(overalBalance);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
