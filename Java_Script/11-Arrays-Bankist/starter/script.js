@@ -90,10 +90,12 @@ const calcDisplaySummary = function (acc) {
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}€`;
+
   const out = acc.movements
-    .filter(mov => mov > 0)
+    .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(out)}€`;
+
   const interest = acc.movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * acc.interestRate) / 100)
@@ -169,6 +171,24 @@ btnTransfer.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
+
+// The findIndex and Close Account 
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    accounts.splice(index, 1);
+
+    // Hide UI
+    containerApp.style.opacity = 0;
+  }
+  inputCloseUsername.value = inputClosePin.value = '';
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -199,7 +219,7 @@ console.log([...arr]);
 // => lay ra: ['c','d','e']
 arr.splice(-1);
 console.log(arr);
-// Lay ra va xoa di chu tai 1 va 2
+// Lay ra (xoa) 2 ki tu tu vi tri so 1
 // -> ['a','b','c','d']
 arr.splice(1,2)
 console.log(arr);
