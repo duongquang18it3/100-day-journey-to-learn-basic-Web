@@ -509,3 +509,17 @@ console.log(movements.includes(-130));
 console.log(movements.some(mov => mov === -130));
 const anyDeposits = movements.some(mov => mov > 0);
 console.log(anyDeposits);
+
+// every method: chi tra ve khi moi phan tu thoa man dieu kien
+
+console.log(account1.movements.every(mov => mov > 0));
+// -> false : boi vi ton tai 4 phan tu nho hon khong
+
+console.log(account4.movements.every(mov => mov > 0));
+// -> true: boi vi  moi phan tu trong mang deu lon hon 0
+
+// Separate callback
+const deposit = mov => mov >0;
+console.log(movements.every(deposit));
+console.log(movements.some(deposit));
+console.log(movements.filter(deposit));
