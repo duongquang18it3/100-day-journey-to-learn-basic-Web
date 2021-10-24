@@ -66,7 +66,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
   const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
-  movs.forEach(function (mov, i) { 
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
     <div class="movements__row">
@@ -203,11 +203,11 @@ btnClose.addEventListener('click', function (e) {
 });
 
 let sorted = false;
-btnSort.addEventListener('click', function(e){
+btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
-})
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -509,7 +509,7 @@ console.log(account); */
 //////////////////////////////////////////////
 // The some and any mothod
 // EQUALITY
-console.log(movements);
+/* console.log(movements);
 console.log(movements.includes(-130));
 
 // some method: condition
@@ -582,3 +582,56 @@ console.log(movements);
 // });
 movements.sort((a, b) => b - a);
 console.log(movements);
+ */
+
+/////////////////////////////////////////////////////
+// More ways of creating and Filling Arrays
+
+/* const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Emprty array + fill method
+
+const x = new Array(7);
+console.log(x);
+// Lấp đầy những phần tử trống từ vị trí thứ 3 đến 5 bằng giá trị 1
+x.fill(1, 3, 5);
+console.log(x);
+// ->[empty × 3, 1, 1, empty × 2]
+// Lấp đầy những phần tử 1 tử của mảng trên bằng giá trí 1
+x.fill(1);
+console.log(x);
+//-> [1, 1, 1, 1, 1, 1, 1]
+
+// Lấp đầy giá từ vị trí 2-6 bằng giá trị 23
+arr.fill(23, 2, 6);
+console.log(arr);
+//->[1, 2, 23, 23, 23, 23, 7]
+
+//Array.from
+// Tạo một mảng với độ dài bằng 7 và chưa các phần từ giá trị 1
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+// ->[1, 1, 1, 1, 1, 1, 1]
+
+// Tạo một mảng chứa các giá trị số thứ tự của mảng
+const z= Array.from({length: 7}, (cur, i)=> i+1);
+console.log(z);
+// -> [1, 2, 3, 4, 5, 6, 7]
+
+// Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+}); */
