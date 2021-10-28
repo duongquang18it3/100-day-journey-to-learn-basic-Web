@@ -113,3 +113,30 @@ bmw.brake();
 bmw.accelerate();
 
  */
+/////////////////////////////////////////////////
+// 14.9 ES6 Class
+
+class PersonCl{
+  constructor(firstName, birthYear){
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge(){
+    console.log(2021-this.birthYear);
+  }
+
+  greet(){
+    console.log(`Hey ${this.firstName}`);
+  }
+};
+
+const jessica = new PersonCl('Quang', 1999);
+console.log(jessica);
+jessica.calcAge();
+console.log(jessica.__proto__ === PersonCl.prototype);
+jessica.greet();
+
+// 1. Classes are NOT hoisted
+// 2. Classes are first-class citizens
+// 3. Classes are executed in strict mode
