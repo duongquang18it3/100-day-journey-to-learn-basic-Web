@@ -139,6 +139,11 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+  // Static method
+  static hey(){
+    console.log('Hey there');
+    console.log(this);
+  }
 }
 
 const jessica = new PersonCl('Quang Tran', 1999);
