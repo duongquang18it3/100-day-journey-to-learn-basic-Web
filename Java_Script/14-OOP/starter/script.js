@@ -116,27 +116,66 @@ bmw.accelerate();
 /////////////////////////////////////////////////
 // 14.9 ES6 Class
 
-class PersonCl{
-  constructor(firstName, birthYear){
-    this.firstName = firstName;
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
-  calcAge(){
-    console.log(2021-this.birthYear);
+  calcAge() {
+    console.log(2021 - this.birthYear);
   }
 
-  greet(){
+  greet() {
     console.log(`Hey ${this.firstName}`);
   }
-};
+  get age() {
+    return 2037 - this.birthYear;
+  }
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not full name !`);
+  }
+  get fullName() {
+    return this._fullName;
+  }
+}
 
-const jessica = new PersonCl('Quang', 1999);
+const jessica = new PersonCl('Quang Tran', 1999);
 console.log(jessica);
 jessica.calcAge();
 console.log(jessica.__proto__ === PersonCl.prototype);
 jessica.greet();
+console.log(jessica.age);
 
 // 1. Classes are NOT hoisted
 // 2. Classes are first-class citizens
 // 3. Classes are executed in strict mode
+
+const walter = new PersonCl('Quang Duong', 1999);
+
+//////////////////////////////////////////////////////////////
+// Setters and Getters
+
+const arr = ['a', 'b', 'c'];
+console.log(arr.pop());
+console.log(arr);
+arr.pop();
+console.log(arr);
+
+// set and get are properties
+const account = {
+  owner: 'Quang',
+  movement: [100, 300, 250, 450],
+
+  get latest() {
+    return this.movement.slice(-1).pop();
+  },
+  set latest(mov) {
+    this.movement.push(mov);
+  },
+};
+
+console.log(account.latest);
+account.latest = 50;
+console.log(account.movement);
