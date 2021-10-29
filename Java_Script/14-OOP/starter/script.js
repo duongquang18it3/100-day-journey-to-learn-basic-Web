@@ -140,7 +140,7 @@ class PersonCl {
     return this._fullName;
   }
   // Static method
-  static hey(){
+  static hey() {
     console.log('Hey there');
     console.log(this);
   }
@@ -152,6 +152,7 @@ jessica.calcAge();
 console.log(jessica.__proto__ === PersonCl.prototype);
 jessica.greet();
 console.log(jessica.age);
+PersonCl.hey();
 
 // 1. Classes are NOT hoisted
 // 2. Classes are first-class citizens
@@ -186,4 +187,26 @@ account.latest = 50;
 console.log(account.movement);
 
 /////////////////////////////////
-// 
+// 14.12 Object.create
+
+const PersonProto = {
+  calcAge() {
+    console.log(2021 - this.birthYear);
+  },
+
+  init(firstName, birthYear){
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+};
+
+const quang = Object.create(PersonProto);
+console.log(quang);
+quang.name = 'Quang';
+quang.birthYear = 2002;
+quang.calcAge();
+console.log(quang.__proto__ === PersonProto);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
+sarah.calcAge();
