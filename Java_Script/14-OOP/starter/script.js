@@ -441,9 +441,9 @@ StudentProto.init = function (firstName, birthYear, course) {
   PersonProto.init.call(this, firstName, birthYear);
   this.course = course;
 };
-StudentProto.introduce = function(){
+StudentProto.introduce = function () {
   console.log(`My name is ${this.firstName} and i studey ${this.course}`);
-}
+};
 
 const jay = Object.create(StudentProto);
 jay.init('Quang Dep Trai', 1999, 'Web Dev');
@@ -454,28 +454,32 @@ jay.calcAge();
 // Another Classes Example
 
 class Account {
-  constructor(owner, currency, pin){
+  constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this.pin = pin;
-    this.movements = [];
+    // Protected property
+    this._pin = pin;
+    this._movements = [];
     this.locate = navigator.languages;
 
     console.log(`Thanks for opening an account, ${owner}`);
   }
 
-  deposit(val){
-    this.movements.push(val)
+  deposit(val) {
+    this._movements.push(val);
   }
-
-  withdraw(val){
-    this.deposit(-val)
+  // Public Interface
+  getMovements() {
+    return this._movements;
   }
-  approveLoan(val){
+  withdraw(val) {
+    this.deposit(-val);
+  }
+  _approveLoan(val) {
     return true;
   }
-  requestLoan(val){
-    if(this.approveLoan(val)){
+  requestLoan(val) {
+    if (this._approveLoan(val)) {
       this.deposit(val);
       console.log('Loan approved');
     }
