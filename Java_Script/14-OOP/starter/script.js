@@ -449,3 +449,46 @@ const jay = Object.create(StudentProto);
 jay.init('Quang Dep Trai', 1999, 'Web Dev');
 jay.introduce();
 jay.calcAge();
+
+///////////////////////////////////////////////////////
+// Another Classes Example
+
+class Account {
+  constructor(owner, currency, pin){
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locate = navigator.languages;
+
+    console.log(`Thanks for opening an account, ${owner}`);
+  }
+
+  deposit(val){
+    this.movements.push(val)
+  }
+
+  withdraw(val){
+    this.deposit(-val)
+  }
+  approveLoan(val){
+    return true;
+  }
+  requestLoan(val){
+    if(this.approveLoan(val)){
+      this.deposit(val);
+      console.log('Loan approved');
+    }
+  }
+}
+
+const acc1 = new Account('Quang', 'EUR', 1111);
+// acc1.movements.push(400);
+// acc1.movements.push(-200);
+acc1.deposit(300);
+acc1.withdraw(150);
+acc1.approveLoan(2000);
+acc1.requestLoan(2000);
+
+console.log(acc1);
+console.log(acc1.pin);
