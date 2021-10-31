@@ -537,14 +537,9 @@ Account.helper();
 // console.log(acc1.#pin);
 // console.log(acc1.#approveLoan(100));
 
+// Chining  Methods
+acc1.deposit(200).deposit(500).withdraw(35).requestLoan(2500)
+.withdraw(4000);
+console.log(acc1.getMovements());
 
-const acc1 = new Account('Quang', 'EUR', 1111);
-// acc1.movements.push(400);
-// acc1.movements.push(-200);
-acc1.deposit(300);
-acc1.withdraw(150);
-acc1.approveLoan(2000);
-acc1.requestLoan(2000);
 
-console.log(acc1);
-console.log(acc1.pin);
