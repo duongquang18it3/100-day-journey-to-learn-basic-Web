@@ -51,7 +51,7 @@ const flights =
 */
 ////////////////////////////////////////////////
 // Destructuring Objects
-/* const restaurant = {
+const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -85,7 +85,6 @@ const flights =
 restaurant.orderDelivery({
   time: '11:00',
   address: 'Da Nang Viet Nam',
-  
 });
 
 const { name, openingHours, categories } = restaurant;
@@ -108,10 +107,18 @@ const obj = { a: 111, b: 222, c: 333 };
 console.log(a, b);
 
 //Nested obj
+console.log(openingHours);
 const {
   fri: { open, close },
 } = openingHours;
-console.log(open, close); */
+console.log(open, close);
+
+const foo = ['one', 'two', 'three'];
+
+const [red, yellow, green] = foo;
+console.log(red); // "one"
+console.log(yellow); // "two"
+console.log(green); // "three"
 
 // The Spread Operator
 /* const restaurant = {
