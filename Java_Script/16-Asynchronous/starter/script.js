@@ -83,7 +83,7 @@ const renderCountry = function (data, className = '') {
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
 };
-const getCountryDataAndNeighbour = function (country) {
+/* const getCountryDataAndNeighbour = function (country) {
   // AJAX call country 1
   const request = new XMLHttpRequest();
   request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
@@ -108,7 +108,8 @@ const getCountryDataAndNeighbour = function (country) {
       const [data2] = JSON.parse(this.responseText);
       console.log(data2);
       renderCountry(data2, 'neighbour');
-
+      
+      
       ////////////////////////
       const neighbour2 = data2.borders[2];
       console.log(neighbour2);
@@ -142,4 +143,33 @@ setTimeout(() => {
       }, 1000);
     }, 1000);
   }, 1000);
-}, 1000);
+}, 1000); */
+
+///////////////////////////////////////////////////////////////////
+// Consuming Promises
+/* 
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(data[0]);
+      renderCountry(data[0]);
+    });
+}; */
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0])  
+    );
+};
+getCountryData('portugal');
+
+////////////////////////////////////////////////
+// 16.9 Handling Rejected Promises
+
+
