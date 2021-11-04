@@ -3,6 +3,41 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
+const renderError = function (message) {
+  countriesContainer.insertAdjacentText('beforeend', message);
+  // countriesContainer.style.opacity=1;
+};
+
+const renderCountry = function (data, className = '') {
+  const key = Object.keys(data.currencies);
+  console.log(key);
+  const {
+    [key]: { name },
+  } = data.currencies;
+  console.log(name);
+  const html = `<article class="country ${className}">
+        <img class="country__img" src=${data.flags.png} />
+        <div class="country__data">
+          <h3 class="country__name">${data.name.common}</h3>
+          <h4 class="country__region">${data.region}</h4>
+          <p class="country__row"><span>👫</span>${(
+            +data.population / 1000000
+          ).toFixed(1)} milion people</p>
+          
+          <p class="country__row"><span>🗣️</span>${Object.values(
+            data.languages
+          )}</p>
+          <p class="country__row"><span>💰</span>
+          ${key}</p>
+          <p class="country__row"><span>💰</span>
+          ${name}
+          </p>
+        </div>
+        
+      </article>`;
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  // countriesContainer.style.opacity = 1;
+};
 ///////////////////////////////////////
 // 16.3 Our First AJAX Call XMLHttpRequest
 /* 
@@ -53,36 +88,6 @@ getCountryData('thailand'); */
 //////////////////////////////////////////////////////////////////
 // Wellcome back AJAX Hell
 
-const renderCountry = function (data, className = '') {
-  const key = Object.keys(data.currencies);
-  console.log(key);
-  const {
-    [key]: { name },
-  } = data.currencies;
-  console.log(name);
-  const html = `<article class="country ${className}">
-        <img class="country__img" src=${data.flags.png} />
-        <div class="country__data">
-          <h3 class="country__name">${data.name.common}</h3>
-          <h4 class="country__region">${data.region}</h4>
-          <p class="country__row"><span>👫</span>${(
-            +data.population / 1000000
-          ).toFixed(1)} milion people</p>
-          
-          <p class="country__row"><span>🗣️</span>${Object.values(
-            data.languages
-          )}</p>
-          <p class="country__row"><span>💰</span>
-          ${key}</p>
-          <p class="country__row"><span>💰</span>
-          ${name}
-          </p>
-        </div>
-        
-      </article>`;
-  countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
-};
 /* const getCountryDataAndNeighbour = function (country) {
   // AJAX call country 1
   const request = new XMLHttpRequest();
@@ -147,8 +152,8 @@ setTimeout(() => {
 
 ///////////////////////////////////////////////////////////////////
 // Consuming Promises
-/* 
-const getCountryData = function (country) {
+
+/* const getCountryData = function (country) {
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(function (response) {
       console.log(response);
@@ -162,14 +167,31 @@ const getCountryData = function (country) {
 }; */
 
 const getCountryData = function (country) {
+  // Country 1
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(response => response.json())
-    .then(data => renderCountry(data[0])  
-    );
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders[0];
+      if (!neighbour) return;
+
+      // Country 2
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data[0], 'neighbour'))
+    .catch(err => {
+      console.log(`${err} ❌❌❌`);
+      renderError(`Something went wrong ❌❌❌ : ${err.message}. Try again ! `);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
 };
-getCountryData('portugal');
+
+btn.addEventListener('click', function () {
+  getCountryData('portugal');
+});
 
 ////////////////////////////////////////////////
 // 16.9 Handling Rejected Promises
-
-
