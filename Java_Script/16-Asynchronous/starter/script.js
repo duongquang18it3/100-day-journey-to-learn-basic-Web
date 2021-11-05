@@ -38,6 +38,12 @@ const renderCountry = function (data, className = '') {
   countriesContainer.insertAdjacentHTML('beforeend', html);
   // countriesContainer.style.opacity = 1;
 };
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+    return response.json();
+  });
+};
 ///////////////////////////////////////
 // 16.3 Our First AJAX Call XMLHttpRequest
 /* 
@@ -166,19 +172,26 @@ setTimeout(() => {
     });
 }; */
 
+////////////////////////////////////////////////
+// Consuming Promises
+// Chaining Promises
+// Handling Rejected Promises
+// Throwing Errors Manually
 const getCountryData = function (country) {
   // Country 1
-  fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then(response => response.json())
+  getJSON(`https://restcountries.com/v3.1/name/${country}`)
     .then(data => {
       renderCountry(data[0]);
+      console.log(data[0]);
       const neighbour = data[0].borders[0];
-      if (!neighbour) return;
-
+      console.log(neighbour);
+      if (!neighbour) throw new Error('No neighbour found!');
       // Country 2
-      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+      return getJSON(
+        `https://restcountries.com/v3.1/alpha/${neighbour}`,
+        'Country not found'
+      );
     })
-    .then(response => response.json())
     .then(data => renderCountry(data[0], 'neighbour'))
     .catch(err => {
       console.log(`${err} ❌❌❌`);
@@ -192,6 +205,3 @@ const getCountryData = function (country) {
 btn.addEventListener('click', function () {
   getCountryData('portugal');
 });
-
-////////////////////////////////////////////////
-// 16.9 Handling Rejected Promises
