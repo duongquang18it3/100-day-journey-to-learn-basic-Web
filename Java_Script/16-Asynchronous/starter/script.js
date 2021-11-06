@@ -232,7 +232,7 @@ TEST COORDINATES 2: -33.933, 18.474
 GOOD LUCK 😀
 */
 
-const whereAmI = function (lat, lng) {
+/* const whereAmI = function (lat, lng) {
   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
     .then(res => {
       if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);
@@ -254,3 +254,21 @@ const whereAmI = function (lat, lng) {
     .catch(err => console.log(`${err.message} ❌❌❌ `));
 };
 whereAmI(19.037, 72.873);
+ */
+///////////////////////////////////////////////////////////
+// 16.13 The event loop in Practice
+
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+Promise.resolve('Resolved promise 2').then(res => {
+  for(let i =0; i <1000; i++ ){
+    console.log(i);
+  };
+  console.log(res);
+});
+console.log('Test end');
+
+//////////////////////////////////////////////////////
+// Build a simple promise
+
